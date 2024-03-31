@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        #fileInputContainer {
+            margin: 10px 0;
+            text-align: center;
+        }
+        #fileInput {
+            display: none;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #fileName {
+            margin-left: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #result p {
+            margin: 5px 0;
+        }
+        #imagePreview {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        #predictButtonContainer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#fileInputContainer">Upload Image</a>
+        <a href="#result">Prediction Result</a>
+    </nav>
+
+    <h1>Plant Disease Detection</h1>
+    <div id="fileInputContainer">
+        <label for="fileInput" class="button">Choose File</label>
+        <span id="fileName"></span>
+        <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" onchange="previewImage(event)">
+    </div>
+    <div id="predictButtonContainer">
+        <button class="button" onclick="predict()">Predict</button>
+    </div>
+    <img id="imagePreview" src="#" alt="Image Preview">
+    <div id="result"></div>
+
+    <script>
+        function previewImage(event) {
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imagePreview = document.getElementById('imagePreview');
+                    imagePreview.style.display = 'block';
+                    imagePreview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+                // Display selected file name
+                document.getElementById('fileName').textContent = file.name;
+            } else {
+                document.getElementById('imagePreview').style.display = 'none';
+                document.getElementById('fileName').textContent = '';
+            }
+        }
+
+        async function predict() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select an image file.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            const response = await fetch('http://localhost:8000/predict', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            const resultDiv = document.getElementById('result');
+            const confidence = result.confidence !== undefined ? result.confidence.toString() : "N/A";
+
+
+            resultDiv.innerHTML = `
+                <p>Predicted Class: ${result.class}</p>
+                <p>Confidence: ${confidence}</p>
+                <p>Accuracy: ${result.accuracy}</p>
+                <p>Loss: ${result.loss}</p>
+                <p>Validation Accuracy: ${result.val_accuracy}</p>
+                <p>Validation Loss: ${result.val_loss}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
