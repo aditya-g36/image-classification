@@ -48,7 +48,6 @@ def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
     return image
 
-
 @app.post("/predict")
 async def predict(
     file: UploadFile = File(...)
@@ -81,6 +80,14 @@ async def predict(
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/about", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
+
+@app.get("/disease", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("diseases.html", {"request": request})
 
 if __name__ == "__main__":
     uvicorn.run(app, host='localhost', port=8000)

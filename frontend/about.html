@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Plant Disease Detection Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        #fileInputContainer {
+            margin: 10px 0;
+            text-align: center;
+        }
+        #fileInput {
+            display: none;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #fileName {
+            margin-left: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #result p {
+            margin: 5px 0;
+        }
+        #imagePreview {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        #predictButtonContainer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    <h1>About Plant Disease Detection Project</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        The Plant Disease Detection Project aims to develop an automated system for the early detection and diagnosis of plant diseases using machine learning and computer vision techniques. The project addresses the need for efficient and accurate detection methods to help farmers identify and manage diseases in crops, thereby reducing yield losses and increasing agricultural productivity.
+    </p>
+
+    <h2>Objectives</h2>
+    <ul>
+        <li>Develop a machine learning model capable of accurately identifying plant diseases based on images of affected plants.</li>
+        <li>Integrate the model into a user-friendly web application accessible to farmers and agricultural stakeholders.</li>
+        <li>Provide timely and reliable disease diagnosis to enable prompt intervention and management practices.</li>
+    </ul>
+
+    <h2>Methodology</h2>
+    <p>
+        The project utilizes a convolutional neural network (CNN) architecture trained on a dataset of plant disease images to classify and diagnose diseases. The CNN model is trained on diverse images representing various plant species and disease types to ensure robust performance across different scenarios. Transfer learning techniques are employed to leverage pre-trained models and optimize training efficiency.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+        <li>Upload Image: Users can upload images of diseased plants through the web interface.</li>
+        <li>Prediction: The system provides real-time predictions of plant diseases and their respective confidence levels.</li>
+        <li>Accuracy Metrics: Users can view accuracy metrics such as model accuracy, loss, validation accuracy, and validation loss.</li>
+        <li>Information about Diseases: Detailed information about various plant diseases is provided to educate users and facilitate disease management.</li>
+    </ul>
+
+    <h2>Future Developments</h2>
+    <p>
+        The Plant Disease Detection Project is an ongoing initiative with plans for future enhancements and expansions. Potential developments include the integration of additional features such as pest detection, crop recommendation systems, and mobile applications for on-the-go disease diagnosis. Collaboration with agricultural experts and stakeholders will further enhance the project's impact and usability.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>
+        For inquiries or feedback regarding the Plant Disease Detection Project, please contact us at [insert contact information].
+    </p>
+
+</body>
+</html>

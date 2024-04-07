@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Plant Diseases</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        #fileInputContainer {
+            margin: 10px 0;
+            text-align: center;
+        }
+        #fileInput {
+            display: none;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #fileName {
+            margin-left: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #result p {
+            margin: 5px 0;
+        }
+        #imagePreview {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        #predictButtonContainer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    <h1>About Plant Diseases</h1>
+
+    <div class="disease-info">
+        <h2>Bacterial Spot</h2>
+        <p>
+            Bacterial spot is a common disease in plants caused by bacterial pathogens. It affects a wide range of crops, including tomatoes, peppers, and beans. Symptoms of bacterial spot include water-soaked lesions on leaves, which later turn dark and necrotic. The disease can cause significant damage to crops if not managed properly.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Early Blight</h2>
+        <p>
+            Early blight is a fungal disease that affects tomato plants, as well as other plants in the Solanaceae family. It is characterized by dark brown lesions on lower leaves, which eventually spread to upper leaves. Early blight can cause defoliation and reduce yield if not controlled.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Late Blight</h2>
+        <p>
+            Late blight is a devastating disease of tomatoes and potatoes caused by the oomycete pathogen Phytophthora infestans. It spreads rapidly in wet and humid conditions, leading to leaf lesions, stem lesions, and ultimately plant death. Late blight can cause significant economic losses in agriculture.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Leaf Mold</h2>
+        <p>
+            Leaf mold is a fungal disease that affects tomato plants. It is caused by the pathogen Fulvia fulva (formerly Cladosporium fulvum). Leaf mold typically appears as yellowish patches on the upper surface of leaves, accompanied by fuzzy white or gray growth on the lower leaf surface. Severe infections can lead to defoliation and reduced fruit yield.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Septoria Leaf Spot</h2>
+        <p>
+            Septoria leaf spot is a common fungal disease that affects a wide range of plants, including tomatoes. It is caused by the fungus Septoria lycopersici. Symptoms include small, dark spots with light centers on leaves, which may coalesce and cause leaf yellowing and premature defoliation. Septoria leaf spot can reduce plant vigor and yield if not managed.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Spider Mites (Two-Spotted Spider Mite)</h2>
+        <p>
+            Spider mites, including the two-spotted spider mite (Tetranychus urticae), are common pests that can cause significant damage to a wide range of plants, including tomatoes. They feed on plant sap, causing stippling, yellowing, and leaf curling. Severe infestations can lead to reduced plant growth and yield.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Target Spot</h2>
+        <p>
+            Target spot, also known as target leaf spot or early blight, is a fungal disease that affects a variety of plants, including tomatoes. It is caused by the fungus Corynespora cassiicola. Symptoms include dark brown to black lesions with concentric rings on leaves, which may coalesce and cause defoliation. Target spot can reduce plant vigor and yield if not managed.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Yellow Leaf Curl Virus</h2>
+        <p>
+            Tomato yellow leaf curl virus (TYLCV) is a viral disease transmitted by whiteflies. It affects tomato plants and other members of the Solanaceae family. Symptoms include yellowing and curling of leaves, stunted growth, and reduced fruit yield. TYLCV can cause significant economic losses in tomato production, especially in warm and humid climates.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Mosaic Virus</h2>
+        <p>
+            Mosaic viruses are a group of plant viruses that affect a wide range of crops, including tomatoes. Symptoms vary depending on the specific virus but may include mosaic patterns, leaf discoloration, stunted growth, and distorted fruit. Mosaic viruses can reduce plant vigor and yield, leading to economic losses in agriculture.
+        </p>
+    </div>
+
+    <div class="disease-info">
+        <h2>Healthy Plants</h2>
+        <p>
+            Healthy plants are free from any significant diseases or pests and exhibit vigorous growth and development. Proper cultural practices, such as providing adequate nutrition, water, and sunlight, as well as managing pests and diseases, are essential for maintaining plant health.
+        </p>
+    </div>
+
+</body>
+</html>
